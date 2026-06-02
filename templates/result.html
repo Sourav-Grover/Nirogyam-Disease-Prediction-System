@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Disease Prediction Result</title> -->
+    <title>Nirogyam - Disease Prediction System</title>
+    <link href="static/doctor-icon.png" rel="icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-heartbeat"></i> Disease Prediction Result</h1>
+        </header>
+        
+        <div class="main-content">
+            <div class="result-container">
+                <h2><i class="fas fa-clipboard-check"></i> Prediction Results</h2>
+                
+                <div class="final-prediction">
+                    <h3>Final Prediction</h3>
+                    <div class="prediction prediction-final">
+                        <p>{{ result.final_prediction }}</p>
+                    </div>
+                    <div class="confidence-info">
+                        <p>Confidence: {{ result.confidence }}%</p>
+                        <div class="confidence-bar">
+                            <div class="confidence-fill" style="width: {{ result.confidence }}%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="model-predictions">
+                    <h3>Individual Model Predictions</h3>
+                    <div class="prediction-group">
+                        <div class="prediction">
+                            <h4><i class="fas fa-tree"></i> Random Forest</h4>
+                            <p>{{ result.rf_model_prediction }}</p>
+                        </div>
+                        <div class="prediction">
+                            <h4><i class="fas fa-chart-pie"></i> Naive Bayes</h4>
+                            <p>{{ result.naive_bayes_prediction }}</p>
+                        </div>
+                        <div class="prediction">
+                            <h4><i class="fas fa-project-diagram"></i> SVM</h4>
+                            <p>{{ result.svm_model_prediction }}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="symptoms-summary">
+                    <h3><i class="fas fa-list-ul"></i> Symptoms Analyzed</h3>
+                    <div class="symptoms-list">
+                        {% if result.symptoms %}
+                            {% for symptom in result.symptoms %}
+                                <span class="symptom-tag">{{ symptom }}</span>
+                            {% endfor %}
+                        {% else %}
+                            <p>No symptoms were provided.</p>
+                        {% endif %}
+                    </div>
+                </div>
+                
+                <div class="disclaimer">
+                    <p><strong>Disclaimer:</strong> This prediction is based on machine learning models and should not replace professional medical advice. Please consult with a healthcare professional for proper diagnosis and treatment.</p>
+                </div>
+                
+                <div class="action-buttons">
+                    <a href="/inner" class="btn"><i class="fas fa-redo"></i> Make Another Prediction</a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Disease Prediction System | Developed as a Minor Project</p>
+        </footer>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html> 

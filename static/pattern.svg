@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" style="background-color:transparent">
+  <path fill="#2ecc71" fill-opacity="0.05" d="M49 0h31l20 35-20 35H49L29 35z"/>
+  <path fill="#27ae60" fill-opacity="0.05" d="M0 52l29-17 29 17v35L29 87 0 70z"/>
+  <path fill="#16a085" fill-opacity="0.05" d="M49 104h31l20 35-20 35H49L29 139z"/>
+  <path fill="#2ecc71" fill-opacity="0.05" d="M99 52l29-17 29 17v35l-29 17-29-17z"/>
+</svg>
