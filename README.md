@@ -89,9 +89,7 @@ Nirogyam-Disease-Prediction-System
 
 Clone the repository
 
-git clone https://github.com/YOUR_USERNAME/Nirogyam-Disease-Prediction-System.git
-
-Move into the project folder
+git clone https://github.com/Sourav-Grover/Nirogyam-Disease-Prediction-System.git
 
 cd Nirogyam-Disease-Prediction-System
 
